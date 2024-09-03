@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
@@ -77,26 +77,36 @@
             // 
             // chart1
             // 
-            this.chart1.BackColor = System.Drawing.Color.Silver;
-            this.chart1.BackImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.chart1.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.chart1.BackColor = System.Drawing.Color.Black;
+            this.chart1.BackImageTransparentColor = System.Drawing.Color.Black;
+            this.chart1.BackSecondaryColor = System.Drawing.Color.Black;
             this.chart1.BorderlineColor = System.Drawing.Color.Silver;
-            chartArea2.AxisY.Maximum = 1024D;
-            chartArea2.AxisY.Minimum = 0D;
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea4.AxisX.LabelStyle.ForeColor = System.Drawing.Color.Lime;
+            chartArea4.AxisX.LineColor = System.Drawing.Color.Lime;
+            chartArea4.AxisY.LabelStyle.ForeColor = System.Drawing.Color.Lime;
+            chartArea4.AxisY.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            chartArea4.AxisY.Maximum = 1024D;
+            chartArea4.AxisY.Minimum = 0D;
+            chartArea4.BackColor = System.Drawing.Color.Black;
+            chartArea4.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart1.Legends.Add(legend4);
             this.chart1.Location = new System.Drawing.Point(376, 103);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series2.BorderWidth = 3;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Color = System.Drawing.Color.Red;
-            series2.Legend = "Legend1";
-            series2.Name = "Live EKG";
-            this.chart1.Series.Add(series2);
+            series4.BackSecondaryColor = System.Drawing.Color.Yellow;
+            series4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            series4.BorderWidth = 3;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series4.Color = System.Drawing.Color.Red;
+            series4.LabelBackColor = System.Drawing.Color.Cyan;
+            series4.LabelBorderColor = System.Drawing.Color.Red;
+            series4.LabelForeColor = System.Drawing.Color.Lime;
+            series4.Legend = "Legend1";
+            series4.Name = "Live EKG";
+            this.chart1.Series.Add(series4);
             this.chart1.Size = new System.Drawing.Size(781, 447);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -118,6 +128,7 @@
             // comboBoxCOMProts
             // 
             this.comboBoxCOMProts.BackColor = System.Drawing.Color.Black;
+            this.comboBoxCOMProts.ForeColor = System.Drawing.Color.Lime;
             this.comboBoxCOMProts.FormattingEnabled = true;
             this.comboBoxCOMProts.Location = new System.Drawing.Point(71, 6);
             this.comboBoxCOMProts.Name = "comboBoxCOMProts";
@@ -126,13 +137,15 @@
             // 
             // buttonStart
             // 
-            this.buttonStart.ForeColor = System.Drawing.Color.Blue;
+            this.buttonStart.BackColor = System.Drawing.Color.Black;
+            this.buttonStart.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonStart.ForeColor = System.Drawing.Color.DodgerBlue;
             this.buttonStart.Location = new System.Drawing.Point(71, 33);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(121, 23);
             this.buttonStart.TabIndex = 3;
             this.buttonStart.Text = "start";
-            this.buttonStart.UseVisualStyleBackColor = true;
+            this.buttonStart.UseVisualStyleBackColor = false;
             this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 
             // label2
