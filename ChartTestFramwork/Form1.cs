@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,12 @@ namespace ChartTestFramwork
         public Form1()
         {
             InitializeComponent();
+
+            string[] ports = SerialPort.GetPortNames();
+            comboBoxCOMProts.Items.Clear();
+            foreach (string p in ports)
+                comboBoxCOMProts.Items.Add(p);
+
             chart1.ChartAreas["ChartArea1"].AxisX.Minimum = 0;
             chart1.ChartAreas["ChartArea1"].AxisX.Maximum = 60;
             chart1.ChartAreas["ChartArea1"].AxisY.Minimum = 0;
@@ -56,6 +63,20 @@ namespace ChartTestFramwork
             chart1.Series["Live EKG"].Points.DataBindXY(xVals,yVals);
             tick = tick + 0.5;
 
+        }
+
+        private void buttonStart_Click(object sender, EventArgs e)
+        {
+            if (timer1.Enabled == false)
+            {
+                timer1.Enabled = true;
+                buttonStart.Text = "stop";
+            }
+            else
+            {
+                timer1.Enabled = false;
+                buttonStart.Text = "start";
+            }
         }
     }
 }
