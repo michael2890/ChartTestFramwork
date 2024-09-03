@@ -34,7 +34,7 @@ namespace ChartTestFramwork
             chart1.ChartAreas["ChartArea1"].AxisY.Minimum = 0;
             chart1.ChartAreas["ChartArea1"].AxisY.Maximum = 1024;
             chart1.ChartAreas["ChartArea1"].AxisY.Interval = 200;
-            chart1.ChartAreas["ChartArea1"].AxisY.MinorGrid.Enabled=true;
+            chart1.ChartAreas["ChartArea1"].AxisY.MinorGrid.Enabled=false;
             chart1.ChartAreas["ChartArea1"].AxisY.MinorGrid.LineDashStyle=ChartDashStyle.Dash;
             chart1.ChartAreas["ChartArea1"].AxisY.MinorGrid.LineColor = Color.DarkGray;
             chart1.ChartAreas["ChartArea1"].AxisY.MinorGrid.Interval =
