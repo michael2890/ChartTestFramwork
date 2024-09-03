@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
@@ -55,23 +55,23 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.textBoxLagetyp = new System.Windows.Forms.TextBox();
+            this.textBoxFrequenz = new System.Windows.Forms.TextBox();
+            this.textBoxRythmus = new System.Windows.Forms.TextBox();
+            this.textBoxSinusTachykardie = new System.Windows.Forms.TextBox();
+            this.textBoxSinusbradykardie = new System.Windows.Forms.TextBox();
+            this.textBoxSTEMI = new System.Windows.Forms.TextBox();
+            this.textBoxVES = new System.Windows.Forms.TextBox();
+            this.textBoxSVES = new System.Windows.Forms.TextBox();
+            this.textBoxAVBI = new System.Windows.Forms.TextBox();
+            this.textBoxAVBII = new System.Windows.Forms.TextBox();
+            this.textBoxAVBIII = new System.Windows.Forms.TextBox();
+            this.textBoxP = new System.Windows.Forms.TextBox();
+            this.textBoxPRI = new System.Windows.Forms.TextBox();
+            this.textBoxPRS = new System.Windows.Forms.TextBox();
+            this.textBoxPQDauer = new System.Windows.Forms.TextBox();
+            this.textBoxQRSDauer = new System.Windows.Forms.TextBox();
+            this.textBoxQTDauer = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,22 +81,22 @@
             this.chart1.BackImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.chart1.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.chart1.BorderlineColor = System.Drawing.Color.Silver;
-            chartArea1.AxisY.Maximum = 1024D;
-            chartArea1.AxisY.Minimum = 0D;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea2.AxisY.Maximum = 1024D;
+            chartArea2.AxisY.Minimum = 0D;
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(376, 103);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series1.BorderWidth = 3;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Color = System.Drawing.Color.Red;
-            series1.Legend = "Legend1";
-            series1.Name = "Live EKG";
-            this.chart1.Series.Add(series1);
+            series2.BorderWidth = 3;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Color = System.Drawing.Color.Red;
+            series2.Legend = "Legend1";
+            series2.Name = "Live EKG";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(781, 447);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -295,158 +295,158 @@
             this.label18.TabIndex = 20;
             this.label18.Text = "STEMI (Anhebung ST)";
             // 
-            // textBox1
+            // textBoxLagetyp
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Black;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(71, 103);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(281, 21);
-            this.textBox1.TabIndex = 21;
+            this.textBoxLagetyp.BackColor = System.Drawing.Color.Black;
+            this.textBoxLagetyp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxLagetyp.Location = new System.Drawing.Point(71, 103);
+            this.textBoxLagetyp.Name = "textBoxLagetyp";
+            this.textBoxLagetyp.Size = new System.Drawing.Size(281, 21);
+            this.textBoxLagetyp.TabIndex = 21;
             // 
-            // textBox2
+            // textBoxFrequenz
             // 
-            this.textBox2.BackColor = System.Drawing.Color.Black;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(71, 129);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(281, 21);
-            this.textBox2.TabIndex = 22;
+            this.textBoxFrequenz.BackColor = System.Drawing.Color.Black;
+            this.textBoxFrequenz.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxFrequenz.Location = new System.Drawing.Point(71, 129);
+            this.textBoxFrequenz.Name = "textBoxFrequenz";
+            this.textBoxFrequenz.Size = new System.Drawing.Size(281, 21);
+            this.textBoxFrequenz.TabIndex = 22;
             // 
-            // textBox3
+            // textBoxRythmus
             // 
-            this.textBox3.BackColor = System.Drawing.Color.Black;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(71, 155);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(281, 21);
-            this.textBox3.TabIndex = 23;
+            this.textBoxRythmus.BackColor = System.Drawing.Color.Black;
+            this.textBoxRythmus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxRythmus.Location = new System.Drawing.Point(71, 155);
+            this.textBoxRythmus.Name = "textBoxRythmus";
+            this.textBoxRythmus.Size = new System.Drawing.Size(281, 21);
+            this.textBoxRythmus.TabIndex = 23;
             // 
-            // textBox4
+            // textBoxSinusTachykardie
             // 
-            this.textBox4.BackColor = System.Drawing.Color.Black;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Location = new System.Drawing.Point(160, 181);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(192, 21);
-            this.textBox4.TabIndex = 24;
+            this.textBoxSinusTachykardie.BackColor = System.Drawing.Color.Black;
+            this.textBoxSinusTachykardie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxSinusTachykardie.Location = new System.Drawing.Point(160, 181);
+            this.textBoxSinusTachykardie.Name = "textBoxSinusTachykardie";
+            this.textBoxSinusTachykardie.Size = new System.Drawing.Size(192, 21);
+            this.textBoxSinusTachykardie.TabIndex = 24;
             // 
-            // textBox5
+            // textBoxSinusbradykardie
             // 
-            this.textBox5.BackColor = System.Drawing.Color.Black;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Location = new System.Drawing.Point(160, 208);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(192, 21);
-            this.textBox5.TabIndex = 25;
+            this.textBoxSinusbradykardie.BackColor = System.Drawing.Color.Black;
+            this.textBoxSinusbradykardie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxSinusbradykardie.Location = new System.Drawing.Point(160, 208);
+            this.textBoxSinusbradykardie.Name = "textBoxSinusbradykardie";
+            this.textBoxSinusbradykardie.Size = new System.Drawing.Size(192, 21);
+            this.textBoxSinusbradykardie.TabIndex = 25;
             // 
-            // textBox6
+            // textBoxSTEMI
             // 
-            this.textBox6.BackColor = System.Drawing.Color.Black;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Location = new System.Drawing.Point(160, 235);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(192, 21);
-            this.textBox6.TabIndex = 26;
+            this.textBoxSTEMI.BackColor = System.Drawing.Color.Black;
+            this.textBoxSTEMI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxSTEMI.Location = new System.Drawing.Point(160, 235);
+            this.textBoxSTEMI.Name = "textBoxSTEMI";
+            this.textBoxSTEMI.Size = new System.Drawing.Size(192, 21);
+            this.textBoxSTEMI.TabIndex = 26;
             // 
-            // textBox7
+            // textBoxVES
             // 
-            this.textBox7.BackColor = System.Drawing.Color.Black;
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.Location = new System.Drawing.Point(160, 263);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(192, 21);
-            this.textBox7.TabIndex = 27;
+            this.textBoxVES.BackColor = System.Drawing.Color.Black;
+            this.textBoxVES.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxVES.Location = new System.Drawing.Point(160, 263);
+            this.textBoxVES.Name = "textBoxVES";
+            this.textBoxVES.Size = new System.Drawing.Size(192, 21);
+            this.textBoxVES.TabIndex = 27;
             // 
-            // textBox8
+            // textBoxSVES
             // 
-            this.textBox8.BackColor = System.Drawing.Color.Black;
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox8.Location = new System.Drawing.Point(160, 289);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(192, 21);
-            this.textBox8.TabIndex = 28;
+            this.textBoxSVES.BackColor = System.Drawing.Color.Black;
+            this.textBoxSVES.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxSVES.Location = new System.Drawing.Point(160, 289);
+            this.textBoxSVES.Name = "textBoxSVES";
+            this.textBoxSVES.Size = new System.Drawing.Size(192, 21);
+            this.textBoxSVES.TabIndex = 28;
             // 
-            // textBox9
+            // textBoxAVBI
             // 
-            this.textBox9.BackColor = System.Drawing.Color.Black;
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox9.Location = new System.Drawing.Point(160, 316);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(192, 21);
-            this.textBox9.TabIndex = 29;
+            this.textBoxAVBI.BackColor = System.Drawing.Color.Black;
+            this.textBoxAVBI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxAVBI.Location = new System.Drawing.Point(160, 316);
+            this.textBoxAVBI.Name = "textBoxAVBI";
+            this.textBoxAVBI.Size = new System.Drawing.Size(192, 21);
+            this.textBoxAVBI.TabIndex = 29;
             // 
-            // textBox10
+            // textBoxAVBII
             // 
-            this.textBox10.BackColor = System.Drawing.Color.Black;
-            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox10.Location = new System.Drawing.Point(276, 343);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(76, 21);
-            this.textBox10.TabIndex = 30;
+            this.textBoxAVBII.BackColor = System.Drawing.Color.Black;
+            this.textBoxAVBII.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxAVBII.Location = new System.Drawing.Point(276, 343);
+            this.textBoxAVBII.Name = "textBoxAVBII";
+            this.textBoxAVBII.Size = new System.Drawing.Size(76, 21);
+            this.textBoxAVBII.TabIndex = 30;
             // 
-            // textBox11
+            // textBoxAVBIII
             // 
-            this.textBox11.BackColor = System.Drawing.Color.Black;
-            this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox11.Location = new System.Drawing.Point(276, 369);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(76, 21);
-            this.textBox11.TabIndex = 31;
+            this.textBoxAVBIII.BackColor = System.Drawing.Color.Black;
+            this.textBoxAVBIII.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxAVBIII.Location = new System.Drawing.Point(276, 369);
+            this.textBoxAVBIII.Name = "textBoxAVBIII";
+            this.textBoxAVBIII.Size = new System.Drawing.Size(76, 21);
+            this.textBoxAVBIII.TabIndex = 31;
             // 
-            // textBox12
+            // textBoxP
             // 
-            this.textBox12.BackColor = System.Drawing.Color.Black;
-            this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox12.Location = new System.Drawing.Point(71, 396);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(281, 21);
-            this.textBox12.TabIndex = 32;
+            this.textBoxP.BackColor = System.Drawing.Color.Black;
+            this.textBoxP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxP.Location = new System.Drawing.Point(71, 396);
+            this.textBoxP.Name = "textBoxP";
+            this.textBoxP.Size = new System.Drawing.Size(281, 21);
+            this.textBoxP.TabIndex = 32;
             // 
-            // textBox13
+            // textBoxPRI
             // 
-            this.textBox13.BackColor = System.Drawing.Color.Black;
-            this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox13.Location = new System.Drawing.Point(160, 422);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(192, 21);
-            this.textBox13.TabIndex = 33;
+            this.textBoxPRI.BackColor = System.Drawing.Color.Black;
+            this.textBoxPRI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxPRI.Location = new System.Drawing.Point(160, 422);
+            this.textBoxPRI.Name = "textBoxPRI";
+            this.textBoxPRI.Size = new System.Drawing.Size(192, 21);
+            this.textBoxPRI.TabIndex = 33;
             // 
-            // textBox14
+            // textBoxPRS
             // 
-            this.textBox14.BackColor = System.Drawing.Color.Black;
-            this.textBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox14.Location = new System.Drawing.Point(160, 449);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(192, 21);
-            this.textBox14.TabIndex = 34;
+            this.textBoxPRS.BackColor = System.Drawing.Color.Black;
+            this.textBoxPRS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxPRS.Location = new System.Drawing.Point(160, 449);
+            this.textBoxPRS.Name = "textBoxPRS";
+            this.textBoxPRS.Size = new System.Drawing.Size(192, 21);
+            this.textBoxPRS.TabIndex = 34;
             // 
-            // textBox15
+            // textBoxPQDauer
             // 
-            this.textBox15.BackColor = System.Drawing.Color.Black;
-            this.textBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox15.Location = new System.Drawing.Point(160, 476);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(192, 21);
-            this.textBox15.TabIndex = 35;
+            this.textBoxPQDauer.BackColor = System.Drawing.Color.Black;
+            this.textBoxPQDauer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxPQDauer.Location = new System.Drawing.Point(160, 476);
+            this.textBoxPQDauer.Name = "textBoxPQDauer";
+            this.textBoxPQDauer.Size = new System.Drawing.Size(192, 21);
+            this.textBoxPQDauer.TabIndex = 35;
             // 
-            // textBox16
+            // textBoxQRSDauer
             // 
-            this.textBox16.BackColor = System.Drawing.Color.Black;
-            this.textBox16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox16.Location = new System.Drawing.Point(160, 503);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(192, 21);
-            this.textBox16.TabIndex = 36;
+            this.textBoxQRSDauer.BackColor = System.Drawing.Color.Black;
+            this.textBoxQRSDauer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxQRSDauer.Location = new System.Drawing.Point(160, 503);
+            this.textBoxQRSDauer.Name = "textBoxQRSDauer";
+            this.textBoxQRSDauer.Size = new System.Drawing.Size(192, 21);
+            this.textBoxQRSDauer.TabIndex = 36;
             // 
-            // textBox17
+            // textBoxQTDauer
             // 
-            this.textBox17.BackColor = System.Drawing.Color.Black;
-            this.textBox17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox17.Location = new System.Drawing.Point(160, 530);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(192, 21);
-            this.textBox17.TabIndex = 37;
+            this.textBoxQTDauer.BackColor = System.Drawing.Color.Black;
+            this.textBoxQTDauer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxQTDauer.Location = new System.Drawing.Point(160, 530);
+            this.textBoxQTDauer.Name = "textBoxQTDauer";
+            this.textBoxQTDauer.Size = new System.Drawing.Size(192, 21);
+            this.textBoxQTDauer.TabIndex = 37;
             // 
             // Form1
             // 
@@ -454,23 +454,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1171, 566);
-            this.Controls.Add(this.textBox17);
-            this.Controls.Add(this.textBox16);
-            this.Controls.Add(this.textBox15);
-            this.Controls.Add(this.textBox14);
-            this.Controls.Add(this.textBox13);
-            this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxQTDauer);
+            this.Controls.Add(this.textBoxQRSDauer);
+            this.Controls.Add(this.textBoxPQDauer);
+            this.Controls.Add(this.textBoxPRS);
+            this.Controls.Add(this.textBoxPRI);
+            this.Controls.Add(this.textBoxP);
+            this.Controls.Add(this.textBoxAVBIII);
+            this.Controls.Add(this.textBoxAVBII);
+            this.Controls.Add(this.textBoxAVBI);
+            this.Controls.Add(this.textBoxSVES);
+            this.Controls.Add(this.textBoxVES);
+            this.Controls.Add(this.textBoxSTEMI);
+            this.Controls.Add(this.textBoxSinusbradykardie);
+            this.Controls.Add(this.textBoxSinusTachykardie);
+            this.Controls.Add(this.textBoxRythmus);
+            this.Controls.Add(this.textBoxFrequenz);
+            this.Controls.Add(this.textBoxLagetyp);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
@@ -528,23 +528,23 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox textBoxLagetyp;
+        private System.Windows.Forms.TextBox textBoxFrequenz;
+        private System.Windows.Forms.TextBox textBoxRythmus;
+        private System.Windows.Forms.TextBox textBoxSinusTachykardie;
+        private System.Windows.Forms.TextBox textBoxSinusbradykardie;
+        private System.Windows.Forms.TextBox textBoxSTEMI;
+        private System.Windows.Forms.TextBox textBoxVES;
+        private System.Windows.Forms.TextBox textBoxSVES;
+        private System.Windows.Forms.TextBox textBoxAVBI;
+        private System.Windows.Forms.TextBox textBoxAVBII;
+        private System.Windows.Forms.TextBox textBoxAVBIII;
+        private System.Windows.Forms.TextBox textBoxP;
+        private System.Windows.Forms.TextBox textBoxPRI;
+        private System.Windows.Forms.TextBox textBoxPRS;
+        private System.Windows.Forms.TextBox textBoxPQDauer;
+        private System.Windows.Forms.TextBox textBoxQRSDauer;
+        private System.Windows.Forms.TextBox textBoxQTDauer;
     }
 }
 
