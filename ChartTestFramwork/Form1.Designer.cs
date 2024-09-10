@@ -30,13 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxCOMProts = new System.Windows.Forms.ComboBox();
-            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.serialPortalt = new System.IO.Ports.SerialPort(this.components);
             this.buttonStart = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -96,8 +95,6 @@
             chartArea1.BackColor = System.Drawing.Color.Black;
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(376, 103);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
@@ -110,7 +107,6 @@
             series1.LabelBackColor = System.Drawing.Color.Cyan;
             series1.LabelBorderColor = System.Drawing.Color.Red;
             series1.LabelForeColor = System.Drawing.Color.Lime;
-            series1.Legend = "Legend1";
             series1.Name = "Live EKG";
             this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(781, 447);
@@ -140,6 +136,7 @@
             this.comboBoxCOMProts.Name = "comboBoxCOMProts";
             this.comboBoxCOMProts.Size = new System.Drawing.Size(121, 21);
             this.comboBoxCOMProts.TabIndex = 2;
+            this.comboBoxCOMProts.SelectedIndexChanged += new System.EventHandler(this.comboBoxCOMProts_SelectedIndexChanged);
             // 
             // buttonStart
             // 
@@ -318,15 +315,18 @@
             // 
             this.textBoxLagetyp.BackColor = System.Drawing.Color.Black;
             this.textBoxLagetyp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxLagetyp.ForeColor = System.Drawing.Color.Lime;
             this.textBoxLagetyp.Location = new System.Drawing.Point(71, 103);
             this.textBoxLagetyp.Name = "textBoxLagetyp";
             this.textBoxLagetyp.Size = new System.Drawing.Size(281, 21);
             this.textBoxLagetyp.TabIndex = 21;
+            this.textBoxLagetyp.Text = "0";
             // 
             // textBoxFrequenz
             // 
             this.textBoxFrequenz.BackColor = System.Drawing.Color.Black;
             this.textBoxFrequenz.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxFrequenz.ForeColor = System.Drawing.Color.Lime;
             this.textBoxFrequenz.Location = new System.Drawing.Point(71, 129);
             this.textBoxFrequenz.Name = "textBoxFrequenz";
             this.textBoxFrequenz.Size = new System.Drawing.Size(281, 21);
@@ -336,6 +336,7 @@
             // 
             this.textBoxRythmus.BackColor = System.Drawing.Color.Black;
             this.textBoxRythmus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxRythmus.ForeColor = System.Drawing.Color.Lime;
             this.textBoxRythmus.Location = new System.Drawing.Point(71, 155);
             this.textBoxRythmus.Name = "textBoxRythmus";
             this.textBoxRythmus.Size = new System.Drawing.Size(281, 21);
@@ -345,6 +346,7 @@
             // 
             this.textBoxSinusTachykardie.BackColor = System.Drawing.Color.Black;
             this.textBoxSinusTachykardie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxSinusTachykardie.ForeColor = System.Drawing.Color.Lime;
             this.textBoxSinusTachykardie.Location = new System.Drawing.Point(160, 181);
             this.textBoxSinusTachykardie.Name = "textBoxSinusTachykardie";
             this.textBoxSinusTachykardie.Size = new System.Drawing.Size(192, 21);
@@ -354,6 +356,7 @@
             // 
             this.textBoxSinusbradykardie.BackColor = System.Drawing.Color.Black;
             this.textBoxSinusbradykardie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxSinusbradykardie.ForeColor = System.Drawing.Color.Lime;
             this.textBoxSinusbradykardie.Location = new System.Drawing.Point(160, 208);
             this.textBoxSinusbradykardie.Name = "textBoxSinusbradykardie";
             this.textBoxSinusbradykardie.Size = new System.Drawing.Size(192, 21);
@@ -363,6 +366,7 @@
             // 
             this.textBoxSTEMI.BackColor = System.Drawing.Color.Black;
             this.textBoxSTEMI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxSTEMI.ForeColor = System.Drawing.Color.Lime;
             this.textBoxSTEMI.Location = new System.Drawing.Point(160, 235);
             this.textBoxSTEMI.Name = "textBoxSTEMI";
             this.textBoxSTEMI.Size = new System.Drawing.Size(192, 21);
@@ -372,6 +376,7 @@
             // 
             this.textBoxVES.BackColor = System.Drawing.Color.Black;
             this.textBoxVES.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxVES.ForeColor = System.Drawing.Color.Lime;
             this.textBoxVES.Location = new System.Drawing.Point(160, 263);
             this.textBoxVES.Name = "textBoxVES";
             this.textBoxVES.Size = new System.Drawing.Size(192, 21);
@@ -381,6 +386,7 @@
             // 
             this.textBoxSVES.BackColor = System.Drawing.Color.Black;
             this.textBoxSVES.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxSVES.ForeColor = System.Drawing.Color.Lime;
             this.textBoxSVES.Location = new System.Drawing.Point(160, 289);
             this.textBoxSVES.Name = "textBoxSVES";
             this.textBoxSVES.Size = new System.Drawing.Size(192, 21);
@@ -390,6 +396,7 @@
             // 
             this.textBoxAVBI.BackColor = System.Drawing.Color.Black;
             this.textBoxAVBI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxAVBI.ForeColor = System.Drawing.Color.Lime;
             this.textBoxAVBI.Location = new System.Drawing.Point(160, 316);
             this.textBoxAVBI.Name = "textBoxAVBI";
             this.textBoxAVBI.Size = new System.Drawing.Size(192, 21);
@@ -399,6 +406,7 @@
             // 
             this.textBoxAVBII.BackColor = System.Drawing.Color.Black;
             this.textBoxAVBII.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxAVBII.ForeColor = System.Drawing.Color.Lime;
             this.textBoxAVBII.Location = new System.Drawing.Point(276, 343);
             this.textBoxAVBII.Name = "textBoxAVBII";
             this.textBoxAVBII.Size = new System.Drawing.Size(76, 21);
@@ -408,6 +416,7 @@
             // 
             this.textBoxAVBIII.BackColor = System.Drawing.Color.Black;
             this.textBoxAVBIII.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxAVBIII.ForeColor = System.Drawing.Color.Lime;
             this.textBoxAVBIII.Location = new System.Drawing.Point(276, 369);
             this.textBoxAVBIII.Name = "textBoxAVBIII";
             this.textBoxAVBIII.Size = new System.Drawing.Size(76, 21);
@@ -417,6 +426,7 @@
             // 
             this.textBoxP.BackColor = System.Drawing.Color.Black;
             this.textBoxP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxP.ForeColor = System.Drawing.Color.Lime;
             this.textBoxP.Location = new System.Drawing.Point(71, 396);
             this.textBoxP.Name = "textBoxP";
             this.textBoxP.Size = new System.Drawing.Size(281, 21);
@@ -426,6 +436,7 @@
             // 
             this.textBoxPRI.BackColor = System.Drawing.Color.Black;
             this.textBoxPRI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxPRI.ForeColor = System.Drawing.Color.Lime;
             this.textBoxPRI.Location = new System.Drawing.Point(160, 422);
             this.textBoxPRI.Name = "textBoxPRI";
             this.textBoxPRI.Size = new System.Drawing.Size(192, 21);
@@ -435,6 +446,7 @@
             // 
             this.textBoxPRS.BackColor = System.Drawing.Color.Black;
             this.textBoxPRS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxPRS.ForeColor = System.Drawing.Color.Lime;
             this.textBoxPRS.Location = new System.Drawing.Point(160, 449);
             this.textBoxPRS.Name = "textBoxPRS";
             this.textBoxPRS.Size = new System.Drawing.Size(192, 21);
@@ -444,6 +456,7 @@
             // 
             this.textBoxPQDauer.BackColor = System.Drawing.Color.Black;
             this.textBoxPQDauer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxPQDauer.ForeColor = System.Drawing.Color.Lime;
             this.textBoxPQDauer.Location = new System.Drawing.Point(160, 476);
             this.textBoxPQDauer.Name = "textBoxPQDauer";
             this.textBoxPQDauer.Size = new System.Drawing.Size(192, 21);
@@ -453,6 +466,7 @@
             // 
             this.textBoxQRSDauer.BackColor = System.Drawing.Color.Black;
             this.textBoxQRSDauer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxQRSDauer.ForeColor = System.Drawing.Color.Lime;
             this.textBoxQRSDauer.Location = new System.Drawing.Point(160, 503);
             this.textBoxQRSDauer.Name = "textBoxQRSDauer";
             this.textBoxQRSDauer.Size = new System.Drawing.Size(192, 21);
@@ -462,6 +476,7 @@
             // 
             this.textBoxQTDauer.BackColor = System.Drawing.Color.Black;
             this.textBoxQTDauer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxQTDauer.ForeColor = System.Drawing.Color.Lime;
             this.textBoxQTDauer.Location = new System.Drawing.Point(160, 530);
             this.textBoxQTDauer.Name = "textBoxQTDauer";
             this.textBoxQTDauer.Size = new System.Drawing.Size(192, 21);
@@ -516,6 +531,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "EKG-Viewer 0.1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -528,7 +544,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBoxCOMProts;
-        private System.IO.Ports.SerialPort serialPort1;
+        private System.IO.Ports.SerialPort serialPortalt;
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
