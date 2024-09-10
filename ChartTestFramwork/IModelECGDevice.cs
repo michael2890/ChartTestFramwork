@@ -6,13 +6,20 @@ using System.Threading.Tasks;
 
 namespace ChartTestFramwork
 {
-    internal interface IModelEKGDevice
+    internal interface IModelECGDevice
     {
-        IViewEKG ViewEKG { set; }
+        IViewEKG ViewECG { set; }
         IModelLocalData ModelLocaldata { set; }
-        IControllerEKG ControllerEKG { set; }
+        IControllerEKG ControllerECG { set; }
 
         void setPort(string portName);
+
+        List<ECGValue> getData24h();
+
+        void deleteData24h();
+
+        void startLiveData();
+        void stopLiveData();
         
     }
 }

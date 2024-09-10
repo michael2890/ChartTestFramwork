@@ -7,20 +7,20 @@ using System.Threading.Tasks;
 
 namespace ChartTestFramwork
 {
-    internal class ModelEKGDevice : IModelEKGDevice
+    internal class ModelECGDevice : IModelECGDevice
     {
         private IModelLocalData modelLocalData;
         private IViewEKG viewEKG;
         private IControllerEKG controllerEKG;
 
-        IViewEKG IModelEKGDevice.ViewEKG { set => viewEKG=value; }
-        IModelLocalData IModelEKGDevice.ModelLocaldata { set => modelLocalData=value; }
-        IControllerEKG IModelEKGDevice.ControllerEKG { set => controllerEKG=value; }
+        IViewEKG IModelECGDevice.ViewECG { set => viewEKG=value; }
+        IModelLocalData IModelECGDevice.ModelLocaldata { set => modelLocalData=value; }
+        IControllerEKG IModelECGDevice.ControllerECG { set => controllerEKG=value; }
 
         private SerialPort serialPort1=new SerialPort();
         private double recievedDouble;
 
-        public ModelEKGDevice()
+        public ModelECGDevice()
         {
             serialPort1.BaudRate = 9600;
             serialPort1.DataBits = 8;
@@ -42,10 +42,33 @@ namespace ChartTestFramwork
             }
         }
 
-        void IModelEKGDevice.setPort(string portName)
+        void IModelECGDevice.setPort(string portName)
         {
             serialPort1.PortName = portName;
             serialPort1.Open();
+        }
+
+        List<ECGValue> IModelECGDevice.getData24h()
+        {
+            throw new NotImplementedException();
+        }
+
+        
+
+
+        void IModelECGDevice.deleteData24h()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IModelECGDevice.startLiveData()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IModelECGDevice.stopLiveData()
+        {
+            throw new NotImplementedException();
         }
     }
 }

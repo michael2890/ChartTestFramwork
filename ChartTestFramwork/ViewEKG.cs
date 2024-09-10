@@ -13,15 +13,15 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace ChartTestFramwork
 {
-    public partial class ViewEKG : Form, IViewEKG
+    public partial class ViewECG : Form, IViewEKG
     {
-        private IModelEKGDevice modelEKGDevice;
+        private IModelECGDevice modelECGDevice;
         private IModelLocalData modelLocalData;
-        private IControllerEKG controllerEKG;
+        private IControllerEKG controllerECG;
 
-        IModelEKGDevice IViewEKG.ModelEKGDevice { set => modelEKGDevice=value; }
+        IModelECGDevice IViewEKG.ModelECGDevice { set => modelECGDevice=value; }
         IModelLocalData IViewEKG.ModelLocalData { set => modelLocalData=value; }
-        IControllerEKG IViewEKG.ControllerEKG { set => controllerEKG=value; }
+        IControllerEKG IViewEKG.ControllerECG { set => controllerECG=value; }
         double IViewEKG.NewValue { set => this.newValue=value; }
         List<double> IViewEKG.Data24h { set => data24h=value; }
 
@@ -33,7 +33,7 @@ namespace ChartTestFramwork
         double newValue;
         List<double> data24h;
         
-        public ViewEKG()
+        public ViewECG()
         {
             InitializeComponent();
             //serialPort1.DataReceived += new SerialDataReceivedEventHandler(serialPort1_DataReceived);
@@ -78,29 +78,29 @@ namespace ChartTestFramwork
 
         }
 
-        private void buttonStart_Click(object sender, EventArgs e)
+        private void buttonStartLiveData_Click(object sender, EventArgs e)
         {
             if (timer1.Enabled == false)
             {
                 timer1.Enabled = true;
-                buttonStart.Text = "stop";
+                buttonStartLiveData.Text = "stop";
             }
             else
             {
                 timer1.Enabled = false;
-                buttonStart.Text = "start";
+                buttonStartLiveData.Text = "start";
             }
         }
 
         private void comboBoxCOMProts_SelectedIndexChanged(object sender, EventArgs e)
         {
-            modelEKGDevice.setPort(comboBoxCOMPorts.SelectedItem.ToString());            
+            modelECGDevice.setPort(comboBoxCOMPorts.SelectedItem.ToString());            
         }
 
 
         private void buttonLoad_Click(object sender, EventArgs e)
         {
-            controllerEKG.getData24h();
+            controllerECG.getData24h();
         }
     }
 }

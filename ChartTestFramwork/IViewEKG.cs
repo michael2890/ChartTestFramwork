@@ -8,9 +8,9 @@ namespace ChartTestFramwork
 {
     internal interface IViewEKG
     {
-        IModelEKGDevice ModelEKGDevice { set; }
+        IModelECGDevice ModelECGDevice { set; }
         IModelLocalData ModelLocalData {  set; }
-        IControllerEKG ControllerEKG { set; }
+        IControllerEKG ControllerECG { set; }
 
         double NewValue { set; }
         List<double> Data24h { set; }

@@ -14,7 +14,7 @@ namespace ChartTestFramwork
         /// 
 
         private static IModelLocalData modelLocaldata;
-        private static IModelEKGDevice modelEKGDevice;
+        private static IModelECGDevice modelEKGDevice;
         private static IViewEKG viewEKG;
         private static IControllerEKG controllerEKG;
         [STAThread]
@@ -24,20 +24,20 @@ namespace ChartTestFramwork
             Application.SetCompatibleTextRenderingDefault(false);
 
             modelLocaldata=new ModelLocaldata();
-            modelEKGDevice=new ModelEKGDevice();
-            viewEKG=new ViewEKG();
+            modelEKGDevice=new ModelECGDevice();
+            viewEKG=new ViewECG();
             controllerEKG=new ControllerEKG();
 
             modelLocaldata.ControllerEKG=controllerEKG;
             modelLocaldata.ViewEKG=viewEKG;
             modelLocaldata.ModelEKGDevice=modelEKGDevice;
 
-            modelEKGDevice.ControllerEKG=controllerEKG;
-            modelEKGDevice.ViewEKG = viewEKG;
+            modelEKGDevice.ControllerECG=controllerEKG;
+            modelEKGDevice.ViewECG = viewEKG;
             modelEKGDevice.ModelLocaldata=modelLocaldata;
 
-            viewEKG.ControllerEKG=controllerEKG;
-            viewEKG.ModelEKGDevice=modelEKGDevice;
+            viewEKG.ControllerECG=controllerEKG;
+            viewEKG.ModelECGDevice=modelEKGDevice;
             viewEKG.ModelLocalData=modelLocaldata;
 
             controllerEKG.ModelLocaldata=modelLocaldata ;
@@ -45,7 +45,7 @@ namespace ChartTestFramwork
             controllerEKG.ViewEKG=viewEKG ;
 
 
-            Application.Run((ViewEKG)viewEKG);
+            Application.Run((ViewECG)viewEKG);
         }
     }
 }

@@ -8,11 +8,11 @@ namespace ChartTestFramwork
 {
     internal class ControllerEKG : IControllerEKG
     {
-        private IModelEKGDevice modelEKGDevice;
+        private IModelECGDevice modelEKGDevice;
         private IModelLocalData modelLocalData;
         private IViewEKG viewEKG;
         IViewEKG IControllerEKG.ViewEKG { set => viewEKG=value; }
-        IModelEKGDevice IControllerEKG.ModelEKGDevice { set => modelEKGDevice=value; }
+        IModelECGDevice IControllerEKG.ModelEKGDevice { set => modelEKGDevice=value; }
         IModelLocalData IControllerEKG.ModelLocaldata { set => modelLocalData=value; }
 
         void IControllerEKG.getData24h()

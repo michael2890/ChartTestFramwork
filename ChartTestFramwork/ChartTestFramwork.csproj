@@ -48,8 +48,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ControllerEKG.cs" />
+    <Compile Include="ECGValue.cs" />
     <Compile Include="IControllerEKG.cs" />
-    <Compile Include="IModelEKGDevice.cs" />
+    <Compile Include="IModelECGDevice.cs" />
     <Compile Include="IModelLocalData.cs" />
     <Compile Include="IViewEKG.cs" />
     <Compile Include="ModelLocaldata.cs" />
@@ -59,7 +60,7 @@
     <Compile Include="ViewEKG.Designer.cs">
       <DependentUpon>ViewEKG.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelEKGDevice.cs" />
+    <Compile Include="ModelECGDevice.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ViewEKG.resx">
