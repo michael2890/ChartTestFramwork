@@ -14,5 +14,9 @@ namespace ChartTestFramwork
 
         void getData24h();
 
+        void startLiveData();
+
+        void stopLiveData();
+
     }
 }

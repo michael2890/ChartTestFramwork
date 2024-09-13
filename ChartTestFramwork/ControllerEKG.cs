@@ -19,5 +19,15 @@ namespace ChartTestFramwork
         {
             viewEKG.Data24h=modelLocalData.getData24h();
         }
+
+        void IControllerEKG.startLiveData()
+        {
+           modelEKGDevice.startLiveData();
+        }
+
+        void IControllerEKG.stopLiveData()
+        {
+            modelEKGDevice.stopLiveData();
+        }
     }
 }

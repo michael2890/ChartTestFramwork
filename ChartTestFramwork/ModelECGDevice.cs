@@ -4,6 +4,7 @@ using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ChartTestFramwork
 {
@@ -19,6 +20,8 @@ namespace ChartTestFramwork
 
         private SerialPort serialPort1=new SerialPort();
         private double recievedDouble;
+        private bool live = false;
+        private string message;
 
         public ModelECGDevice()
         {
@@ -31,21 +34,29 @@ namespace ChartTestFramwork
 
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            try
+            while (live == true)
             {
-                string message = serialPort1.ReadLine();
-                recievedDouble = double.Parse(message);
-                viewEKG.NewValue = recievedDouble;
+
+
+                try
+                {
+                    string message = serialPort1.ReadLine();
+                    recievedDouble = double.Parse(message);
+                    viewEKG.NewValue = recievedDouble;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                
             }
-            catch (Exception ex)
-            {
-            }
+            return;
         }
 
         void IModelECGDevice.setPort(string portName)
         {
             serialPort1.PortName = portName;
-            serialPort1.Open();
+            
         }
 
         List<ECGValue> IModelECGDevice.getData24h()
@@ -63,12 +74,22 @@ namespace ChartTestFramwork
 
         void IModelECGDevice.startLiveData()
         {
-            throw new NotImplementedException();
+            live = true;
+            
+            try
+            {
+                serialPort1.Open();     
+            }
+            
+            catch (Exception ex)
+            { 
+                    MessageBox.Show(ex.Message);
+            }
         }
 
         void IModelECGDevice.stopLiveData()
         {
-            throw new NotImplementedException();
+            live=false;
         }
     }
 }

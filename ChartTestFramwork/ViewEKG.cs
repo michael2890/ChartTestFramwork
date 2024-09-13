@@ -36,8 +36,7 @@ namespace ChartTestFramwork
         public ViewECG()
         {
             InitializeComponent();
-            //serialPort1.DataReceived += new SerialDataReceivedEventHandler(serialPort1_DataReceived);
-
+            
             string[] ports = SerialPort.GetPortNames();
             comboBoxCOMPorts.Items.Clear();
             foreach (string p in ports)
@@ -80,13 +79,18 @@ namespace ChartTestFramwork
 
         private void buttonStartLiveData_Click(object sender, EventArgs e)
         {
+
             if (timer1.Enabled == false)
             {
+                controllerECG.startLiveData();
                 timer1.Enabled = true;
+                
                 buttonStartLiveData.Text = "stop";
+
             }
             else
             {
+                controllerECG.stopLiveData();
                 timer1.Enabled = false;
                 buttonStartLiveData.Text = "start";
             }
