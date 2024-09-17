@@ -20,6 +20,8 @@ namespace ChartTestFramwork
 
         void startLiveData();
         void stopLiveData();
-        
+        double getValue();
+
+
     }
 }

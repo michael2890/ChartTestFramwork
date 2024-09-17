@@ -19,9 +19,10 @@ namespace ChartTestFramwork
         IControllerEKG IModelECGDevice.ControllerECG { set => controllerEKG=value; }
 
         private SerialPort serialPort1=new SerialPort();
-        private double recievedDouble;
+        private double recievedDouble=0;
         private bool live = false;
         private string message;
+    
 
         public ModelECGDevice()
         {
@@ -90,6 +91,11 @@ namespace ChartTestFramwork
         void IModelECGDevice.stopLiveData()
         {
             live=false;
+        }
+
+        double IModelECGDevice.getValue()
+        {
+            return recievedDouble;
         }
     }
 }

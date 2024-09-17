@@ -14,5 +14,7 @@ namespace ChartTestFramwork
 
         List<double> getData24h();
 
+        void saveLiveData(ECGValue aktuellerWert);
+
     }
 }

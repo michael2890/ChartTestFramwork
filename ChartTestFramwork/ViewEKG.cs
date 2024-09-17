@@ -106,5 +106,20 @@ namespace ChartTestFramwork
         {
             controllerECG.getData24h();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (button1.Text == "start save")
+            {
+                button1.Text = "stop save";
+                controllerECG.saveLiveData();    
+            }
+            else
+            {
+                controllerECG.stopSaveLiveData();
+                button1.Text = "start save";
+            }
+
+        }
     }
 }
