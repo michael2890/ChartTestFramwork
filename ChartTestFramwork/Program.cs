@@ -23,7 +23,7 @@ namespace ChartTestFramwork
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            modelLocaldata=new ModelLocaldata();
+            modelLocaldata=new ModelSQL();
             modelEKGDevice=new ModelECGDevice();
             viewEKG=new ViewECG();
             controllerEKG=new ControllerEKG();
