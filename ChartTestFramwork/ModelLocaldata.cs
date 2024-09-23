@@ -26,7 +26,7 @@ namespace ChartTestFramwork
         void IModelLocalData.saveLiveData(ECGValue aktuellerWert)
         {
             XElement datenElement = new XElement("Messung",
-                    new XElement("Zeitstempel", aktuellerWert.TimeStamp.ToString("yyyy-MM-dd HH:mm:ss:f:ff")),
+                    new XElement("Zeitstempel", aktuellerWert.TimeStamp.ToString("yyyy-MM-dd HH:mm:ss.ffff")),
                     new XElement("Wert", aktuellerWert.Value)
                 );
             xmlDoc.Root.Add(datenElement);

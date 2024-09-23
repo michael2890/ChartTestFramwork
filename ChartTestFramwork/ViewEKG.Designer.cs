@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
@@ -82,41 +82,42 @@
             this.chart1.BackImageTransparentColor = System.Drawing.Color.Black;
             this.chart1.BackSecondaryColor = System.Drawing.Color.Black;
             this.chart1.BorderlineColor = System.Drawing.Color.Silver;
-            chartArea4.AxisX.LabelStyle.ForeColor = System.Drawing.Color.Lime;
-            chartArea4.AxisX.LineColor = System.Drawing.Color.Lime;
-            chartArea4.AxisX.MajorGrid.LineColor = System.Drawing.Color.Lime;
-            chartArea4.AxisX.MinorGrid.LineColor = System.Drawing.Color.Lime;
-            chartArea4.AxisX.MinorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea4.AxisY.LabelStyle.ForeColor = System.Drawing.Color.Lime;
-            chartArea4.AxisY.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            chartArea4.AxisY.MajorGrid.LineColor = System.Drawing.Color.Lime;
-            chartArea4.AxisY.Maximum = 1024D;
-            chartArea4.AxisY.Minimum = 0D;
-            chartArea4.AxisY.MinorGrid.LineColor = System.Drawing.Color.Lime;
-            chartArea4.AxisY.MinorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea4.BackColor = System.Drawing.Color.Black;
-            chartArea4.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea4);
+            chartArea2.AxisX.LabelStyle.ForeColor = System.Drawing.Color.Lime;
+            chartArea2.AxisX.LineColor = System.Drawing.Color.Lime;
+            chartArea2.AxisX.MajorGrid.LineColor = System.Drawing.Color.Lime;
+            chartArea2.AxisX.MinorGrid.LineColor = System.Drawing.Color.Lime;
+            chartArea2.AxisX.MinorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea2.AxisY.LabelStyle.ForeColor = System.Drawing.Color.Lime;
+            chartArea2.AxisY.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            chartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.Lime;
+            chartArea2.AxisY.Maximum = 1024D;
+            chartArea2.AxisY.Minimum = 0D;
+            chartArea2.AxisY.MinorGrid.LineColor = System.Drawing.Color.Lime;
+            chartArea2.AxisY.MinorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea2.BackColor = System.Drawing.Color.Black;
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
             this.chart1.Location = new System.Drawing.Point(376, 103);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series4.BackSecondaryColor = System.Drawing.Color.Yellow;
-            series4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            series4.BorderWidth = 3;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.Color = System.Drawing.Color.Red;
-            series4.LabelBackColor = System.Drawing.Color.Cyan;
-            series4.LabelBorderColor = System.Drawing.Color.Red;
-            series4.LabelForeColor = System.Drawing.Color.Lime;
-            series4.Name = "Live EKG";
-            this.chart1.Series.Add(series4);
+            series2.BackSecondaryColor = System.Drawing.Color.Yellow;
+            series2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            series2.BorderWidth = 3;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Color = System.Drawing.Color.Red;
+            series2.LabelBackColor = System.Drawing.Color.Cyan;
+            series2.LabelBorderColor = System.Drawing.Color.Red;
+            series2.LabelForeColor = System.Drawing.Color.Lime;
+            series2.Name = "Live EKG";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(781, 447);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
             // timer1
             // 
+            this.timer1.Interval = 5;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // label1
