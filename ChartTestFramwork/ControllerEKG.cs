@@ -7,22 +7,22 @@ using System.Windows.Forms;
 
 namespace ChartTestFramwork
 {
-    internal class ControllerEKG : IControllerEKG
+    internal class ControllerEKG : IControllerECG
     {
         private IModelECGDevice modelEKGDevice;
         private IModelLocalData modelLocalData;
-        private IViewEKG viewEKG;
+        private IViewECG viewEKG;
         private bool liveSave=false;
-        IViewEKG IControllerEKG.ViewEKG { set => viewEKG=value; }
-        IModelECGDevice IControllerEKG.ModelEKGDevice { set => modelEKGDevice=value; }
-        IModelLocalData IControllerEKG.ModelLocaldata { set => modelLocalData=value; }
+        IViewECG IControllerECG.ViewEKG { set => viewEKG=value; }
+        IModelECGDevice IControllerECG.ModelEKGDevice { set => modelEKGDevice=value; }
+        IModelLocalData IControllerECG.ModelLocaldata { set => modelLocalData=value; }
 
-        void IControllerEKG.getData24h()
+        void IControllerECG.getData24h()
         {
             viewEKG.Data24h=modelLocalData.getData24h();
         }
 
-        void IControllerEKG.saveLiveData()
+        void IControllerECG.saveLiveData()
         {
             liveSave=true;
             while (liveSave == true)
@@ -35,17 +35,17 @@ namespace ChartTestFramwork
             }
         }
 
-        void IControllerEKG.startLiveData()
+        void IControllerECG.startLiveData()
         {
            modelEKGDevice.startLiveData();
         }
 
-        void IControllerEKG.stopLiveData()
+        void IControllerECG.stopLiveData()
         {
             modelEKGDevice.stopLiveData();
         }
 
-        void IControllerEKG.stopSaveLiveData()
+        void IControllerECG.stopSaveLiveData()
         {
             this.liveSave=false;
         }

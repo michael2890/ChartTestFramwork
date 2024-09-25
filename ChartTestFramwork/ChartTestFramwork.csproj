@@ -102,10 +102,11 @@
   <ItemGroup>
     <Compile Include="ControllerEKG.cs" />
     <Compile Include="ECGValue.cs" />
-    <Compile Include="IControllerEKG.cs" />
+    <Compile Include="IControllerECG.cs" />
     <Compile Include="IModelECGDevice.cs" />
     <Compile Include="IModelLocalData.cs" />
-    <Compile Include="IViewEKG.cs" />
+    <Compile Include="IViewECG.cs" />
+    <Compile Include="ModelCVSWerte.cs" />
     <Compile Include="ModelLocaldata.cs" />
     <Compile Include="ModelSQL.cs" />
     <Compile Include="Not_A_Virus.cs" />

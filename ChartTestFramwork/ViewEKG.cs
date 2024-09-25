@@ -13,17 +13,17 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace ChartTestFramwork
 {
-    public partial class ViewECG : Form, IViewEKG
+    public partial class ViewECG : Form, IViewECG
     {
         private IModelECGDevice modelECGDevice;
         private IModelLocalData modelLocalData;
-        private IControllerEKG controllerECG;
+        private IControllerECG controllerECG;
 
-        IModelECGDevice IViewEKG.ModelECGDevice { set => modelECGDevice=value; }
-        IModelLocalData IViewEKG.ModelLocalData { set => modelLocalData=value; }
-        IControllerEKG IViewEKG.ControllerECG { set => controllerECG=value; }
-        double IViewEKG.NewValue { set => this.newValue=value; }
-        List<double> IViewEKG.Data24h { set => data24h=value; }
+        IModelECGDevice IViewECG.ModelECGDevice { set => modelECGDevice=value; }
+        IModelLocalData IViewECG.ModelLocalData { set => modelLocalData=value; }
+        IControllerECG IViewECG.ControllerECG { set => controllerECG=value; }
+        double IViewECG.NewValue { set => this.newValue=value; }
+        List<double> IViewECG.Data24h { set => data24h=value; }
 
         List<double> xVals = new List<double>();
         List<double> yVals = new List<double>();

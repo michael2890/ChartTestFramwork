@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ChartTestFramwork
 {
-    internal interface IControllerEKG
+    internal interface IControllerECG
     {
-        IViewEKG ViewEKG { set; }
+        IViewECG ViewEKG { set; }
         IModelECGDevice ModelEKGDevice { set; }
         IModelLocalData ModelLocaldata { set; }
 

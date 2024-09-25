@@ -8,9 +8,9 @@ namespace ChartTestFramwork
 {
     internal interface IModelECGDevice
     {
-        IViewEKG ViewECG { set; }
+        IViewECG ViewECG { set; }
         IModelLocalData ModelLocaldata { set; }
-        IControllerEKG ControllerECG { set; }
+        IControllerECG ControllerECG { set; }
 
         void setPort(string portName);
 

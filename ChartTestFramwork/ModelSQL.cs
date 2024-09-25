@@ -18,12 +18,12 @@ namespace ChartTestFramwork
        private static MySqlConnection conn = new MySqlConnection(myConnectionString);
 
        private static MySqlCommand mycommand = conn.CreateCommand();
-        IViewEKG IModelLocalData.ViewEKG { set => viewEKG = value; }
-        IModelECGDevice IModelLocalData.ModelEKGDevice { set => modelECGDevice = value; }
-        IControllerEKG IModelLocalData.ControllerEKG { set => controllerEKG = value; }
-        private IViewEKG viewEKG;
+        IViewECG IModelLocalData.ViewEKG { set => viewEKG = value; }
+        IModelECGDevice IModelLocalData.ModelECGDevice { set => modelECGDevice = value; }
+        IControllerECG IModelLocalData.ControllerECG { set => controllerEKG = value; }
+        private IViewECG viewEKG;
         private IModelECGDevice modelECGDevice;
-        private IControllerEKG controllerEKG;
+        private IControllerECG controllerEKG;
         List<double> IModelLocalData.getData24h()
         {
             throw new NotImplementedException();

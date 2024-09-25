@@ -11,12 +11,12 @@ namespace ChartTestFramwork
     internal class ModelECGDevice : IModelECGDevice
     {
         private IModelLocalData modelLocalData;
-        private IViewEKG viewEKG;
-        private IControllerEKG controllerEKG;
+        private IViewECG viewEKG;
+        private IControllerECG controllerEKG;
 
-        IViewEKG IModelECGDevice.ViewECG { set => viewEKG=value; }
+        IViewECG IModelECGDevice.ViewECG { set => viewEKG=value; }
         IModelLocalData IModelECGDevice.ModelLocaldata { set => modelLocalData=value; }
-        IControllerEKG IModelECGDevice.ControllerECG { set => controllerEKG=value; }
+        IControllerECG IModelECGDevice.ControllerECG { set => controllerEKG=value; }
 
         private SerialPort serialPort1=new SerialPort();
         private double recievedDouble=0;

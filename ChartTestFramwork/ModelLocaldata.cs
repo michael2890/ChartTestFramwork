@@ -11,12 +11,12 @@ namespace ChartTestFramwork
     internal class ModelLocaldata : IModelLocalData
     {
         private IModelECGDevice modelEKGDevice;
-        private IViewEKG viewEKG;
-        private IControllerEKG controllerEKG;
+        private IViewECG viewEKG;
+        private IControllerECG controllerEKG;
         private XDocument xmlDoc = new XDocument(new XElement("EKGDaten"));
-        IViewEKG IModelLocalData.ViewEKG { set => viewEKG=value; }
-        IModelECGDevice IModelLocalData.ModelEKGDevice { set => modelEKGDevice=value; }
-        IControllerEKG IModelLocalData.ControllerEKG { set => controllerEKG=value; }
+        IViewECG IModelLocalData.ViewEKG { set => viewEKG=value; }
+        IModelECGDevice IModelLocalData.ModelECGDevice { set => modelEKGDevice=value; }
+        IControllerECG IModelLocalData.ControllerECG { set => controllerEKG=value; }
 
         List<double> IModelLocalData.getData24h()
         {

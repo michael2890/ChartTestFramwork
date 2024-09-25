@@ -15,22 +15,22 @@ namespace ChartTestFramwork
 
         private static IModelLocalData modelLocaldata;
         private static IModelECGDevice modelEKGDevice;
-        private static IViewEKG viewEKG;
-        private static IControllerEKG controllerEKG;
+        private static IViewECG viewEKG;
+        private static IControllerECG controllerEKG;
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            modelLocaldata=new ModelLocaldata();
+            modelLocaldata=new ModelCVSWerte();
             modelEKGDevice=new ModelECGDevice();
             viewEKG=new ViewECG();
             controllerEKG=new ControllerEKG();
 
-            modelLocaldata.ControllerEKG=controllerEKG;
+            modelLocaldata.ControllerECG=controllerEKG;
             modelLocaldata.ViewEKG=viewEKG;
-            modelLocaldata.ModelEKGDevice=modelEKGDevice;
+            modelLocaldata.ModelECGDevice=modelEKGDevice;
 
             modelEKGDevice.ControllerECG=controllerEKG;
             modelEKGDevice.ViewECG = viewEKG;

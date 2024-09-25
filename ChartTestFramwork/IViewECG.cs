@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace ChartTestFramwork
 {
-    internal interface IViewEKG
+    internal interface IViewECG
     {
         IModelECGDevice ModelECGDevice { set; }
         IModelLocalData ModelLocalData {  set; }
-        IControllerEKG ControllerECG { set; }
+        IControllerECG ControllerECG { set; }
 
         double NewValue { set; }
         List<double> Data24h { set; }
