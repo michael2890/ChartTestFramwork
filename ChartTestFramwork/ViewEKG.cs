@@ -18,11 +18,22 @@ namespace ChartTestFramwork
         private IModelECGDevice modelECGDevice;
         private IModelLocalData modelLocalData;
         private IControllerECG controllerECG;
+        private bool saveData=false;
 
         IModelECGDevice IViewECG.ModelECGDevice { set => modelECGDevice=value; }
         IModelLocalData IViewECG.ModelLocalData { set => modelLocalData=value; }
         IControllerECG IViewECG.ControllerECG { set => controllerECG=value; }
-        double IViewECG.NewValue { set => this.newValue=value; }
+        double IViewECG.NewValue
+        {
+            set
+            {
+                this.newValue = value;
+                if (saveData==true)
+                {
+                    controllerECG.saveLiveData();
+                }
+            }
+        }
         List<double> IViewECG.Data24h { set => data24h=value; }
 
         List<double> xVals = new List<double>();
@@ -112,11 +123,11 @@ namespace ChartTestFramwork
             if (button1.Text == "start save")
             {
                 button1.Text = "stop save";
-                controllerECG.saveLiveData();    
+                saveData = true;
             }
             else
             {
-                controllerECG.stopSaveLiveData();
+                saveData = false;
                 button1.Text = "start save";
             }
 

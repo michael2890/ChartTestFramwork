@@ -24,15 +24,18 @@ namespace ChartTestFramwork
 
         void IControllerECG.saveLiveData()
         {
-            liveSave=true;
-            while (liveSave == true)
-            {
+            //liveSave=true;
+            
+            //Hier fehlt der Trigger duch den Empfang!
+
+            //while (liveSave == true)
+            //{
                 ECGValue aktuellerWert = new ECGValue();
                 aktuellerWert.TimeStamp = DateTime.Now;
                 aktuellerWert.Value = modelEKGDevice.getValue();
                 modelLocalData.saveLiveData(aktuellerWert);
-                Application.DoEvents();
-            }
+            //    Application.DoEvents();
+            //}
         }
 
         void IControllerECG.startLiveData()
