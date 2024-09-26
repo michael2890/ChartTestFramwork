@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data;
-using MySql.Data.MySqlClient;
+//using MySql.Data;
+//using MySql.Data.MySqlClient;
 
 
 namespace ChartTestFramwork
 {
-    internal class ModelSQL : IModelLocalData
+    internal class ModelSQL //: IModelLocalData
     {
-
+/*
        private static String myConnectionString = "server=127.0.0.1;uid=EKG;pwd=1234?;database=ekgdatenbank;";
 
        private static MySqlConnection conn = new MySqlConnection(myConnectionString);
@@ -50,7 +50,7 @@ namespace ChartTestFramwork
                 conn.Close();
             }
         }
-
+*/
 
     }
 }

@@ -54,7 +54,6 @@
     <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=7.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.7.0.1\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=8.0.20.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -106,7 +105,7 @@
     <Compile Include="IModelECGDevice.cs" />
     <Compile Include="IModelLocalData.cs" />
     <Compile Include="IViewECG.cs" />
-    <Compile Include="ModelCVSWerte.cs" />
+    <Compile Include="ModelCSVWerte.cs" />
     <Compile Include="ModelLocaldata.cs" />
     <Compile Include="ModelSQL.cs" />
     <Compile Include="Not_A_Virus.cs" />

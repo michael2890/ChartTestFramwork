@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ChartTestFramwork
 {
-    internal class ModelCVSWerte : IModelLocalData
+    internal class ModelCSVWerte : IModelLocalData
     {
         private IViewECG view;
         private IModelECGDevice model;
@@ -23,7 +23,7 @@ namespace ChartTestFramwork
             throw new NotImplementedException();
         }
 
-        public ModelCVSWerte()
+        public ModelCSVWerte()
         {
             string path = @"MyTest" + DateTime.Now.ToString("yymmdd") + @".csv";
             fs = File.Create(path);
