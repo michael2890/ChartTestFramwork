@@ -26,7 +26,7 @@ namespace ChartTestFramwork
             modelLocaldata=new ModelCSVWerte();
             modelEKGDevice=new ModelECGDevice();
             viewEKG=new ViewECG();
-            controllerEKG=new ControllerEKG();
+            controllerEKG=new ControllerECG();
 
             modelLocaldata.ControllerECG=controllerEKG;
             modelLocaldata.ViewEKG=viewEKG;

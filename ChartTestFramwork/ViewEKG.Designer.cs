@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
@@ -72,7 +72,7 @@
             this.textBoxQRSDauer = new System.Windows.Forms.TextBox();
             this.textBoxQTDauer = new System.Windows.Forms.TextBox();
             this.buttonLoad = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonSaveData = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,35 +82,35 @@
             this.chart1.BackImageTransparentColor = System.Drawing.Color.Black;
             this.chart1.BackSecondaryColor = System.Drawing.Color.Black;
             this.chart1.BorderlineColor = System.Drawing.Color.Silver;
-            chartArea2.AxisX.LabelStyle.ForeColor = System.Drawing.Color.Lime;
-            chartArea2.AxisX.LineColor = System.Drawing.Color.Lime;
-            chartArea2.AxisX.MajorGrid.LineColor = System.Drawing.Color.Lime;
-            chartArea2.AxisX.MinorGrid.LineColor = System.Drawing.Color.Lime;
-            chartArea2.AxisX.MinorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea2.AxisY.LabelStyle.ForeColor = System.Drawing.Color.Lime;
-            chartArea2.AxisY.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            chartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.Lime;
-            chartArea2.AxisY.Maximum = 1024D;
-            chartArea2.AxisY.Minimum = 0D;
-            chartArea2.AxisY.MinorGrid.LineColor = System.Drawing.Color.Lime;
-            chartArea2.AxisY.MinorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea2.BackColor = System.Drawing.Color.Black;
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
+            chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.Lime;
+            chartArea1.AxisX.LineColor = System.Drawing.Color.Lime;
+            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Lime;
+            chartArea1.AxisX.MinorGrid.LineColor = System.Drawing.Color.Lime;
+            chartArea1.AxisX.MinorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea1.AxisY.LabelStyle.ForeColor = System.Drawing.Color.Lime;
+            chartArea1.AxisY.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Lime;
+            chartArea1.AxisY.Maximum = 1024D;
+            chartArea1.AxisY.Minimum = 0D;
+            chartArea1.AxisY.MinorGrid.LineColor = System.Drawing.Color.Lime;
+            chartArea1.AxisY.MinorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea1.BackColor = System.Drawing.Color.Black;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Location = new System.Drawing.Point(376, 103);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series2.BackSecondaryColor = System.Drawing.Color.Yellow;
-            series2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            series2.BorderWidth = 3;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Color = System.Drawing.Color.Red;
-            series2.LabelBackColor = System.Drawing.Color.Cyan;
-            series2.LabelBorderColor = System.Drawing.Color.Red;
-            series2.LabelForeColor = System.Drawing.Color.Lime;
-            series2.Name = "Live EKG";
-            this.chart1.Series.Add(series2);
+            series1.BackSecondaryColor = System.Drawing.Color.Yellow;
+            series1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            series1.BorderWidth = 3;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Color = System.Drawing.Color.Red;
+            series1.LabelBackColor = System.Drawing.Color.Cyan;
+            series1.LabelBorderColor = System.Drawing.Color.Red;
+            series1.LabelForeColor = System.Drawing.Color.Lime;
+            series1.Name = "Live EKG";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(781, 447);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -498,18 +498,18 @@
             this.buttonLoad.UseVisualStyleBackColor = false;
             this.buttonLoad.Click += new System.EventHandler(this.buttonLoad_Click);
             // 
-            // button1
+            // buttonSaveData
             // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.button1.Location = new System.Drawing.Point(198, 33);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 23);
-            this.button1.TabIndex = 39;
-            this.button1.Text = "start save";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonSaveData.BackColor = System.Drawing.Color.Black;
+            this.buttonSaveData.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSaveData.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.buttonSaveData.Location = new System.Drawing.Point(198, 33);
+            this.buttonSaveData.Name = "buttonSaveData";
+            this.buttonSaveData.Size = new System.Drawing.Size(121, 23);
+            this.buttonSaveData.TabIndex = 39;
+            this.buttonSaveData.Text = "start save";
+            this.buttonSaveData.UseVisualStyleBackColor = false;
+            this.buttonSaveData.Click += new System.EventHandler(this.buttonSaveData_Click);
             // 
             // ViewECG
             // 
@@ -517,7 +517,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1171, 566);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonSaveData);
             this.Controls.Add(this.buttonLoad);
             this.Controls.Add(this.textBoxQTDauer);
             this.Controls.Add(this.textBoxQRSDauer);
@@ -611,7 +611,7 @@
         private System.Windows.Forms.TextBox textBoxQRSDauer;
         private System.Windows.Forms.TextBox textBoxQTDauer;
         private System.Windows.Forms.Button buttonLoad;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonSaveData;
     }
 }
 

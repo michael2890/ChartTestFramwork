@@ -22,7 +22,17 @@ namespace ChartTestFramwork
         private double recievedDouble=0;
         private bool live = false;
         private string message;
-    
+
+        public delegate void ECGDataRecievedEventHandler(object sender, ECGDataRecievedEventArgs e);
+
+        public event ECGDataRecievedEventHandler ECGDataRecieved;
+
+        protected virtual void OnECGDataRecieved(ECGDataRecievedEventArgs e)
+        {
+            ECGDataRecievedEventHandler handler = ECGDataRecieved;
+            handler?.Invoke(this, e);
+        }
+
 
         public ModelECGDevice()
         {

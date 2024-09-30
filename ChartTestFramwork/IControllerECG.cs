@@ -18,7 +18,7 @@ namespace ChartTestFramwork
 
         void stopLiveData();
 
-        void saveLiveData();
+        void startSaveLiveData();
 
         void stopSaveLiveData();
 

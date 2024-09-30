@@ -99,7 +99,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ControllerEKG.cs" />
+    <Compile Include="ControllerECG.cs" />
+    <Compile Include="ECGDataRecievedEventArgs.cs" />
     <Compile Include="ECGValue.cs" />
     <Compile Include="IControllerECG.cs" />
     <Compile Include="IModelECGDevice.cs" />

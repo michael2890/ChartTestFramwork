@@ -1,51 +1,58 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static ChartTestFramwork.ModelECGDevice;
 
 namespace ChartTestFramwork
 {
-    internal class ControllerEKG : IControllerECG
+    internal class ControllerECG : IControllerECG
     {
-        private IModelECGDevice modelEKGDevice;
+        private IModelECGDevice modelECGDevice;
         private IModelLocalData modelLocalData;
         private IViewECG viewEKG;
         private bool liveSave=false;
         IViewECG IControllerECG.ViewEKG { set => viewEKG=value; }
-        IModelECGDevice IControllerECG.ModelEKGDevice { set => modelEKGDevice=value; }
+        IModelECGDevice IControllerECG.ModelEKGDevice
+        {
+            set
+            {
+                modelECGDevice = value;
+                modelECGDevice.ECGDataRecieved += new ECGDataRecievedEventHandler(modelECGDevice_ECGDataRecieved);
+            }
+        }
         IModelLocalData IControllerECG.ModelLocaldata { set => modelLocalData=value; }
+        
+
+        private void modelECGDevice_ECGDataRecieved(object sender, ECGDataRecievedEventArgs e)
+        {
+            if (liveSave)
+                modelLocalData.saveLiveData(e.ECGValueRecieved);
+        }
+
+
 
         void IControllerECG.getData24h()
         {
             viewEKG.Data24h=modelLocalData.getData24h();
         }
 
-        void IControllerECG.saveLiveData()
+        void IControllerECG.startSaveLiveData()
         {
-            //liveSave=true;
-            
-            //Hier fehlt der Trigger duch den Empfang!
-
-            //while (liveSave == true)
-            //{
-                ECGValue aktuellerWert = new ECGValue();
-                aktuellerWert.TimeStamp = DateTime.Now;
-                aktuellerWert.Value = modelEKGDevice.getValue();
-                modelLocalData.saveLiveData(aktuellerWert);
-            //    Application.DoEvents();
-            //}
+            liveSave=true;
         }
 
         void IControllerECG.startLiveData()
         {
-           modelEKGDevice.startLiveData();
+           modelECGDevice.startLiveData();
         }
 
         void IControllerECG.stopLiveData()
         {
-            modelEKGDevice.stopLiveData();
+            modelECGDevice.stopLiveData();
         }
 
         void IControllerECG.stopSaveLiveData()
