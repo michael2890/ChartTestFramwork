@@ -18,7 +18,7 @@ namespace ChartTestFramwork
         IModelECGDevice IModelLocalData.ModelECGDevice { set => modelEKGDevice=value; }
         IControllerECG IModelLocalData.ControllerECG { set => controllerEKG=value; }
 
-        List<double> IModelLocalData.getData24h()
+        List<double> IModelLocalData.get24hData()
         {
             throw new NotImplementedException();
         }
@@ -37,6 +37,11 @@ namespace ChartTestFramwork
 
             string fullPath = Path.Combine(customDirectory, customFileName);
             xmlDoc.Save(fullPath);
+        }
+
+        void IModelLocalData.set24hData(ECGValue aktuellerWert)
+        {
+            throw new NotImplementedException();
         }
     }
 }

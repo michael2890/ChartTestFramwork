@@ -109,7 +109,6 @@
     <Compile Include="ModelCSVWerte.cs" />
     <Compile Include="ModelLocaldata.cs" />
     <Compile Include="ModelSQL.cs" />
-    <Compile Include="Not_A_Virus.cs" />
     <Compile Include="ViewEKG.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +130,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -52,8 +52,14 @@ namespace ChartTestFramwork
                 try
                 {
                     string message = serialPort1.ReadLine();
+                    //Hier noch Timestamp von Wert trennen!!!
                     recievedDouble = double.Parse(message);
                     viewEKG.NewValue = recievedDouble;
+                    ECGDataRecievedEventArgs data = new ECGDataRecievedEventArgs();
+                    data.ECGValueRecieved.Value = recievedDouble;
+                    data.ECGValueRecieved.TimeStamp= DateTime.Now;
+                    OnECGDataRecieved(data);
+
                 }
                 catch (Exception ex)
                 {
@@ -103,9 +109,6 @@ namespace ChartTestFramwork
             live=false;
         }
 
-        double IModelECGDevice.getValue()
-        {
-            return recievedDouble;
-        }
+        
     }
 }

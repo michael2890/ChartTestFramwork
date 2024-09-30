@@ -12,9 +12,12 @@ namespace ChartTestFramwork
         IModelECGDevice ModelECGDevice { set; }
         IControllerECG ControllerECG { set; }
 
-        List<double> getData24h();
+        List<double> get24hData();
+        void set24hData(ECGValue aktuellerWert);
 
         void saveLiveData(ECGValue aktuellerWert);
+
+        
 
     }
 }

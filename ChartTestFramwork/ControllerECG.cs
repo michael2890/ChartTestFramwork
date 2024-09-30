@@ -37,7 +37,7 @@ namespace ChartTestFramwork
 
         void IControllerECG.getData24h()
         {
-            viewEKG.Data24h=modelLocalData.getData24h();
+            viewEKG.Data24h=modelLocalData.get24hData();
         }
 
         void IControllerECG.startSaveLiveData()

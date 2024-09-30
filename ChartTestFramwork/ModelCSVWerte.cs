@@ -18,11 +18,15 @@ namespace ChartTestFramwork
         IModelECGDevice IModelLocalData.ModelECGDevice { set => model = value; }
         IControllerECG IModelLocalData.ControllerECG { set => controller = value; }
 
-        List<double> IModelLocalData.getData24h()
+        List<double> IModelLocalData.get24hData()
         {
             throw new NotImplementedException();
         }
-
+        
+        void IModelLocalData.set24hData(ECGValue aktuellerWert)
+        {
+            throw new NotImplementedException();
+        }
         public ModelCSVWerte()
         {
             string path = @"MyTest" + DateTime.Now.ToString("yymmdd") + @".csv";
@@ -32,9 +36,14 @@ namespace ChartTestFramwork
 
         void IModelLocalData.saveLiveData(ECGValue aktuellerWert)
         {
-            byte[] info = new UTF8Encoding(true).GetBytes(aktuellerWert.Value.ToString()+";\n");
+            byte[] info = new UTF8Encoding(true).GetBytes(
+                aktuellerWert.TimeStamp.ToString()
+                +";"
+                + aktuellerWert.Value.ToString()
+                +";\n");
             fs.Write(info, 0, info.Length);
         }
-    
+
+       
     }
 }
