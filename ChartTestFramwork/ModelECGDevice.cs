@@ -13,6 +13,8 @@ namespace ChartTestFramwork
         private IModelLocalData modelLocalData;
         private IViewECG viewEKG;
         private IControllerECG controllerEKG;
+        private ECGDataRecievedEventArgs data = new ECGDataRecievedEventArgs();
+
 
         IViewECG IModelECGDevice.ViewECG { set => viewEKG=value; }
         IModelLocalData IModelECGDevice.ModelLocaldata { set => modelLocalData=value; }
@@ -52,17 +54,19 @@ namespace ChartTestFramwork
                 try
                 {
                     string message = serialPort1.ReadLine();
-                    MessageBox.Show(message);
+                    //MessageBox.Show(message);
                     string[] messageparts = message.Split(';');
                     int timestamp = Int32.Parse(messageparts[0]);
                     int wert =Int32.Parse(messageparts[1]);
 
-                    MessageBox.Show("TimeStamp:" + timestamp.ToString()
-                        + " Value:" + wert.ToString());
+                    //MessageBox.Show("TimeStamp:" + timestamp.ToString()
+                    //    + " Value:" + wert.ToString());
 
                     recievedInt = wert;
                     viewEKG.NewValue = recievedInt;
-                    ECGDataRecievedEventArgs data = new ECGDataRecievedEventArgs();
+
+                    data.ECGValueRecieved = new ECGValue();
+
                     data.ECGValueRecieved.Value = wert;
                     data.ECGValueRecieved.TimeStamp= timestamp;
                     OnECGDataRecieved(data);
