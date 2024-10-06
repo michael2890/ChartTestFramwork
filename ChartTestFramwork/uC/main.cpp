@@ -51,7 +51,7 @@ ISR(ADC_vect)
 	timestamp++;
 	
 	uint8_t t[1];
-	t[0]=';'
+	t[0]=';';
 	
 	uint8_t s[1];
 	s[0]='\0';
@@ -149,7 +149,7 @@ void UARTPutInt32(uint32_t zahl)		//Wird aktuell nicht genutzt
 	UARTPutChar(0x30 + ((zahl / 1000)    % 10));	// Tausender
 	UARTPutChar(0x30 + ((zahl / 100)     % 10));	// Hunderter
 	UARTPutChar(0x30 + ((zahl / 10)      % 10));	// Zehner
-	UARTPutChar(0x30 + ((zahl % 10));		// Einer
+	UARTPutChar(0x30 + ((zahl % 10)));		// Einer
 }
 
 void UARTPutDecimal(uint8_t byte)		//Wird aktuell nicht genutzt
@@ -181,7 +181,7 @@ main()
 	
 	UARTInit();
 	//DDRC=0xff;
-	uint8_t z;
+	//uint8_t z;
 	uint8_t s[20];
 	
 	s[0]='r';
