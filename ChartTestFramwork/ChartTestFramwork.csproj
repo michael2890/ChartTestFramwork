@@ -131,6 +131,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="ClassDiagram1.cd" />
+    <None Include="octave\Alex\EKG.m" />
+    <None Include="octave\Alex\EKGmitGlatt.m" />
+    <None Include="octave\Alex\MyTest241006.csv" />
+    <None Include="octave\Alex\MyTest243025%281%29.csv" />
+    <None Include="octave\Christoph\dataanalysis3.m" />
+    <None Include="octave\Christoph\MyTest241006.csv" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -148,7 +154,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="octave\Alex\AgJ12bCuckx0f4Kb.png" />
+    <Content Include="octave\Alex\dtoCITg0rYcJSrdC.png" />
     <Content Include="uC\main.cpp" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
