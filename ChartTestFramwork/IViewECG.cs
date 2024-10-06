@@ -12,7 +12,7 @@ namespace ChartTestFramwork
         IModelLocalData ModelLocalData {  set; }
         IControllerECG ControllerECG { set; }
 
-        double NewValue { set; }
+        int NewValue { set; }
         List<double> Data24h { set; }
     }
 }

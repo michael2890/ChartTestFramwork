@@ -19,7 +19,7 @@ namespace ChartTestFramwork
         IControllerECG IModelECGDevice.ControllerECG { set => controllerEKG=value; }
 
         private SerialPort serialPort1=new SerialPort();
-        private double recievedDouble=0;
+        private int recievedInt=0;
         private bool live = false;
         private string message;
 
@@ -52,12 +52,19 @@ namespace ChartTestFramwork
                 try
                 {
                     string message = serialPort1.ReadLine();
-                    //Hier noch Timestamp von Wert trennen!!!
-                    recievedDouble = double.Parse(message);
-                    viewEKG.NewValue = recievedDouble;
+                    MessageBox.Show(message);
+                    string[] messageparts = message.Split(';');
+                    int timestamp = Int32.Parse(messageparts[0]);
+                    int wert =Int32.Parse(messageparts[1]);
+
+                    MessageBox.Show("TimeStamp:" + timestamp.ToString()
+                        + " Value:" + wert.ToString());
+
+                    recievedInt = wert;
+                    viewEKG.NewValue = recievedInt;
                     ECGDataRecievedEventArgs data = new ECGDataRecievedEventArgs();
-                    data.ECGValueRecieved.Value = recievedDouble;
-                    data.ECGValueRecieved.TimeStamp= DateTime.Now;
+                    data.ECGValueRecieved.Value = wert;
+                    data.ECGValueRecieved.TimeStamp= timestamp;
                     OnECGDataRecieved(data);
 
                 }

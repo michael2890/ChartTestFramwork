@@ -31,6 +31,7 @@ namespace ChartTestFramwork
         {
             if (liveSave)
                 modelLocalData.saveLiveData(e.ECGValueRecieved);
+            viewEKG.NewValue=e.ECGValueRecieved.Value;
         }
 
 

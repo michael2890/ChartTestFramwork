@@ -21,12 +21,12 @@ namespace ChartTestFramwork
         private List<double> xVals = new List<double>();
         private List<double> yVals = new List<double>();
         private double tick = 0.0;
-        private double newValue;
+        private int newValue;
         private List<double> data24h;
         IModelECGDevice IViewECG.ModelECGDevice { set => modelECGDevice=value; }
         IModelLocalData IViewECG.ModelLocalData { set => modelLocalData=value; }
         IControllerECG IViewECG.ControllerECG { set => controllerECG=value; }
-        double IViewECG.NewValue { set => this.newValue = value; }
+        int IViewECG.NewValue { set => this.newValue = value; }
         List<double> IViewECG.Data24h { set => data24h=value; }
 
         

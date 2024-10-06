@@ -31,6 +31,7 @@ uint32_t timestamp = 0;
 void UARTPutChar(uint8_t val);
 void UARTPutDecimal(uint8_t byte);
 void UARTPutBinary(uint8_t byte);
+void UARTPutInt32(uint32_t zahl);
 void UARTPutString(unsigned char*s)
 {
 	while(*s)
@@ -50,15 +51,20 @@ ISR(ADC_vect)
 	
 	timestamp++;
 	
-	uint8_t t[1];
-	t[0]=';';
+	//uint8_t t[1];
+	//t[0]=';';
 	
-	uint8_t s[1];
-	s[0]='\0';
+	//uint8_t s[1];
+	//s[0]='\0';
 	
-	UARTPutString(t);
+	//UARTPutString(t);
+	
+	UARTPutInt32(timestamp);
+	UARTPutChar(';');
 	UARTPutDecimal(adc_value); //Wert zwischen 0 und 255 ohne vorher einen String zu schicken, sieht man das nicht in Putty...
-	UARTPutString(s);
+	//UARTPutString(s);
+	UARTPutChar('\r');			//Für einen Zeilenumbruch
+	UARTPutChar('\n');			//
 	
 	if(adc_value<0x0F)
 	{

@@ -29,7 +29,7 @@ namespace ChartTestFramwork
         }
         public ModelCSVWerte()
         {
-            string path = @"MyTest" + DateTime.Now.ToString("yymmdd") + @".csv";
+            string path = @"MyTest" + DateTime.Now.ToString("yyMMdd") + @".csv";
             fs = File.Create(path);
         }
 
