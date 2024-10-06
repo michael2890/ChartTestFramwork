@@ -26,6 +26,7 @@
 #include <string.h>
 //--------------------------------------------------------------------------
 unsigned char timer_value;
+uint32_t timestamp = 0;
 
 void UARTPutChar(uint8_t val);
 void UARTPutDecimal(uint8_t byte);
@@ -47,11 +48,15 @@ ISR(ADC_vect)
 	//adc_value=ADC;
 	adc_value=ADCH;
 	
+	timestamp++;
+	
+	uint8_t t[1];
+	t[0]=';'
 	
 	uint8_t s[1];
-	
 	s[0]='\0';
 	
+	UARTPutString(t);
 	UARTPutDecimal(adc_value); //Wert zwischen 0 und 255 ohne vorher einen String zu schicken, sieht man das nicht in Putty...
 	UARTPutString(s);
 	
@@ -90,11 +95,20 @@ void timerInit()
 	TIMSK |= (1 << TOIE0);
 
 	/* Interrupt Aktion alle
-	(F_CPU=3686400/8)/256 Hz = 1800 Hz bzw. 555us
-	(F_CPU=3686400/64)/256 Hz=  225 Hz bzw  4,44ms
-	
+	  Vorteiler 1    => 3.686.400Hz/256        = 14,4 kHz =>  69,44 us
+	  Vorteiler 8    => (3.686.400Hz/8)/256    =  1,8 kHz => 555,55 us
+	x Vorteiler 64   => (3.686.400Hz/64)/256   =  225  Hz =>   4,44 ms
+	  Vorteiler 256  => (3.686.400Hz/256)/256  = 56,8  Hz =>  17,77 ms
+	  Vorteiler 1024 => (3.686.400Hz/1024)/256 = 14,06 Hz =>  71,11 ms
+	  (F_CPU=3686400/Prescaler)/256 Hz = f [Hz] bzw. 1/f => T
 	*/
 
+	/*Werteanzahl ca 2Tage: 2 * 24h * 60min * 60s * 225Werte = > 38.880.000
+	    uint8_t 	8 Bit 	0 .. 255 	unsigned char
+	    uint16_t 	16 Bit 	0 .. 65.535 	unsigned int
+	  x uint32_t 	32 Bit 	0 .. 4.294.967.295 	unsigned long int
+	*/
+	timestamp = 0;
 }
 ISR(TIMER0_OVF_vect)
 {
@@ -126,6 +140,17 @@ void UARTPutChar(uint8_t val)
 	UDR=val;					// sende Daten
 }
 
+void UARTPutInt32(uint32_t zahl)		//Wird aktuell nicht genutzt
+{
+	UARTPutChar(0x30 + (zahl / 10000000));	// Zehnmilionen
+	UARTPutChar(0x30 + ((zahl / 1000000) % 10));	// Milion
+	UARTPutChar(0x30 + ((zahl / 100000)  % 10));	// Hunderttausender
+	UARTPutChar(0x30 + ((zahl / 10000)   % 10));	// Zehntausender
+	UARTPutChar(0x30 + ((zahl / 1000)    % 10));	// Tausender
+	UARTPutChar(0x30 + ((zahl / 100)     % 10));	// Hunderter
+	UARTPutChar(0x30 + ((zahl / 10)      % 10));	// Zehner
+	UARTPutChar(0x30 + ((zahl % 10));		// Einer
+}
 
 void UARTPutDecimal(uint8_t byte)		//Wird aktuell nicht genutzt
 {
